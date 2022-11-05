@@ -47,8 +47,8 @@ body{
 .card-user{
     display: flex;
     flex-direction: column;
-    width: 290px;
-    height: 550px;
+    width: 300px;
+    height: 580px;
     border-radius: 50px;
     background-color: var(--bg-card);
     box-shadow: .5rem .5rem .5rem .2rem var(--box-shadow);
@@ -75,7 +75,6 @@ body{
 
 .user{
     overflow: hidden;
-    height: 270px;
     margin: 50px 0px;
 }
 
@@ -84,17 +83,19 @@ body{
     left: 4.5rem;
     width: 270px;
     border-radius: 50%;
+    border: 6px solid var(--purple-dark);
 }
 
 .infos-user{
     height: 125px;
     padding: 10px;
-    width: 170px;
-    top: 420px;
+    width: 150px;
+    top: 440px;
     left: 340px;
     position: absolute;
     border-radius: 20px;
-    background-image: linear-gradient(black, transparent, black);
+    background-color: rgb(72, 61, 139, 0.5)
+
 }
 
 .infos {
@@ -108,5 +109,31 @@ body{
 
 .infos p{
     font-size: 15px;
+}
+
+input{
+    outline: none;
+    height: 30px;
+    border: none;
+    color: white;
+    background-color: var(--bg-card)
+}
+
+.btn{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-card{
+    background-color: var(--purple);
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    color: white;
 }
 
