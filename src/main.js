@@ -1,3 +1,16 @@
+const card = document.querySelector(".card-user");
+const input = document.querySelector("input")
+var i = 0;
+card.addEventListener("dblclick", function () {
+    var background = ['#2737a8', '#483d8b', '#3c0b61', '#3e4aa7', '#0e1218']
+    card.style.background = background[i];
+    input.style.background = background[i]
+    i++;
+    if (i == 5){
+        i = 0
+    }
+});
+
 function gerarUrl() {
     const input = document.querySelector(".logo-text");
     const url = 'https://api.github.com/users/'
@@ -24,13 +37,14 @@ function gerarCard() {
                 seguindo.textContent = data.following + " Seguindo"
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
-                company.textContent =  data.company
+                company.textContent = data.company
                 location.textContent = data.location
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
             }
         })
 }
+
 
 
 
