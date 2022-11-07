@@ -120,6 +120,10 @@ input{
     background-color: var(--bg-card)
 }
 
+::placeholder{
+    font-size: 15px;
+}
+
 .btn{
     height: 100px;
     display: flex;

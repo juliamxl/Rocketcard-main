@@ -1,23 +1,6 @@
-const card = document.querySelector(".card-user");
-const input = document.querySelector("input")
-var i = 0;
-card.addEventListener("dblclick", function () {
-    var background = ['#2737a8', '#483d8b', '#3c0b61', '#3e4aa7', '#0e1218']
-    card.style.background = background[i];
-    input.style.background = background[i]
-    i++;
-    if (i == 5){
-        i = 0
-    }
-});
+import IMask from 'imask';
 
-function gerarUrl() {
-    const input = document.querySelector(".logo-text");
-    const url = 'https://api.github.com/users/'
-    var user = input.value;
 
-    return url + user;
-}
 
 function gerarCard() {
     const seguidores = document.querySelector(".followers");
@@ -44,6 +27,31 @@ function gerarCard() {
             }
         })
 }
+
+
+
+const card = document.querySelector(".card-user");
+const input = document.querySelector("input")
+var i = 0;
+card.addEventListener("dblclick", function () {
+    var background = ['#2737a8', '#483d8b', '#3c0b61', '#3e4aa7', '#0e1218']
+    card.style.background = background[i];
+    input.style.background = background[i]
+    i++;
+    if (i == 5){
+        i = 0
+    }
+});
+
+function gerarUrl() {
+    const input = document.querySelector(".logo-text");
+    const url = 'https://api.github.com/users/'
+    var user = input.value;
+
+    return url + user;
+}
+
+
 
 
 
