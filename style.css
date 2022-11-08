@@ -6,7 +6,7 @@
 }
 
 :root {
-    --bg: #1c1c1c;
+    --bg: #27282e;
     --bg-card: #0e1218;
     --bg-popup: #000000cc;
     --box-shadow: #00000066;
@@ -38,12 +38,7 @@ body{
     align-items: center;
 }
 
-.box-card{
-    padding: 20px;
-    height: 550px;
-    width: 900px;
-    
-}
+
 
 .card-user{
     display: flex;
@@ -92,7 +87,7 @@ body{
     padding: 10px;
     width: 150px;
     top: 440px;
-    left: 340px;
+    left: 640px;
     position: absolute;
     border-radius: 20px;
     background-color: rgb(72, 61, 139, 0.5)
@@ -142,3 +137,14 @@ input{
     color: white;
 }
 
+.logo.white {
+    border: solid .1rem var(--purple-dark);
+}
+
+input.white{
+    color: #0e1218;
+}
+
+body.white{
+    background-color: #483d8b;
+}

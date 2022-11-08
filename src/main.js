@@ -1,8 +1,5 @@
-import IMask from 'imask';
-
-
-
 function gerarCard() {
+    const sCompany = '';
     const seguidores = document.querySelector(".followers");
     const seguindo = document.querySelector(".following");
     const repos = document.querySelector(".repository");
@@ -20,25 +17,43 @@ function gerarCard() {
                 seguindo.textContent = data.following + " Seguindo"
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
-                company.textContent = data.company
                 location.textContent = data.location
+                company.textContent = CompanyLimit(data.company) 
+                
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
             }
         })
 }
 
-
+function CompanyLimit(dataCompany){
+    var companyLenght = dataCompany.length;
+    if(companyLenght >= 15){
+        let resultado = dataCompany.substring(0,13);
+        console.log(resultado);
+        return resultado + "...";
+    }else{
+        return dataCompany;
+    }
+  
+}
 
 const card = document.querySelector(".card-user");
 const input = document.querySelector("input")
 var i = 0;
 card.addEventListener("dblclick", function () {
-    var background = ['#2737a8', '#483d8b', '#3c0b61', '#3e4aa7', '#0e1218']
+    const body = document.querySelector('body')
+    const icon = document.querySelector('.logo')
+    const input = document.querySelector('input')
+    icon.classList.toggle('white')
+    input.classList.toggle('white')
+    body.classList.toggle('white')
+    
+    var background = ['#E6E8E1', '#0e1218']
     card.style.background = background[i];
     input.style.background = background[i]
     i++;
-    if (i == 5){
+    if (i == 2){
         i = 0
     }
 });
