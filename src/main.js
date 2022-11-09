@@ -18,8 +18,14 @@ function gerarCard() {
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
                 location.textContent = data.location
-                company.textContent = CompanyLimit(data.company) 
-                
+                if(data.company.length >= 15){
+                    company.textContent = CompanyLimit(data.company) ,
+                    console.log("sdf")
+                }else if(data.company.length == ""){
+                    company.textContent = "";
+                }else{
+                    company.textContent = data.company;
+                }
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
             }
@@ -28,15 +34,11 @@ function gerarCard() {
 
 function CompanyLimit(dataCompany){
     var companyLenght = dataCompany.length;
-    if(companyLenght >= 15){
         let resultado = dataCompany.substring(0,13);
-        console.log(resultado);
         return resultado + "...";
-    }else{
         return dataCompany;
     }
-  
-}
+
 
 const card = document.querySelector(".card-user");
 const input = document.querySelector("input")
