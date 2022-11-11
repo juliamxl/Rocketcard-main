@@ -69,7 +69,7 @@ body{
 
 .user{
     overflow: hidden;
-    height: 490px;
+    height: 600px;
     margin: 30px 0px;
 }
 
@@ -145,4 +145,8 @@ input.white{
 
 body.white{
     background-color: #483d8b;
+}
+
+.infos-user.active{
+    height: 140px;
 }

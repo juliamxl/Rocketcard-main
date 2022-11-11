@@ -1,5 +1,4 @@
 function gerarCard() {
-    const sCompany = '';
     const seguidores = document.querySelector(".followers");
     const seguindo = document.querySelector(".following");
     const repos = document.querySelector(".repository");
@@ -18,13 +17,11 @@ function gerarCard() {
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
                 location.textContent = data.location
-                if(data.company.length >= 15){
-                    company.textContent = CompanyLimit(data.company) ,
-                    console.log("sdf")
-                }else if(data.company.length == ""){
-                    company.textContent = "";
-                }else{
-                    company.textContent = data.company;
+                if(!data.company){
+                    company.textContent = data.company
+                    console.log("sda")
+                } if(data.company.length >= 15){
+                    company.textContent = CompanyLimit(data.company)
                 }
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
@@ -33,10 +30,8 @@ function gerarCard() {
 }
 
 function CompanyLimit(dataCompany){
-    var companyLenght = dataCompany.length;
-        let resultado = dataCompany.substring(0,13);
-        return resultado + "...";
-        return dataCompany;
+        resultado = dataCompany.substring(0,13);
+        return resultado;
     }
 
 
