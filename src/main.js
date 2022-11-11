@@ -31,7 +31,7 @@ function gerarCard() {
 
 function CompanyLimit(dataCompany){
         resultado = dataCompany.substring(0,13);
-        return resultado;
+        return resultado + "...";
     }
 
 
@@ -63,7 +63,12 @@ function gerarUrl() {
     return url + user;
 }
 
-
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.querySelector(".btn-card").click();
+  }
+});
 
 
 
