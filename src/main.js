@@ -19,7 +19,6 @@ function gerarCard() {
                 location.textContent = data.location
                 if(!data.company){
                     company.textContent = data.company
-                    console.log("sda")
                 } if(data.company.length >= 15){
                     company.textContent = CompanyLimit(data.company)
                 }
@@ -69,8 +68,3 @@ input.addEventListener("keypress", function(event) {
     document.querySelector(".btn-card").click();
   }
 });
-
-
-
-
-
