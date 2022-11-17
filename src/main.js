@@ -65,10 +65,3 @@ function gerarUrl() {
 
     return url + user;
 }
-
-
-
-
-
-
-
