@@ -38,13 +38,11 @@ body{
     align-items: center;
 }
 
-
-
 .card-user{
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 580px;
+    height: 590px;
     border-radius: 50px;
     background-color: var(--bg-card);
     box-shadow: .5rem .5rem .5rem .2rem var(--box-shadow);
@@ -71,7 +69,8 @@ body{
 
 .user{
     overflow: hidden;
-    margin: 50px 0px;
+    height: 600px;
+    margin: 30px 0px;
 }
 
 .user-img{
@@ -89,9 +88,11 @@ body{
     top: 55%;
     left: 42%;
     position: absolute;
+    bottom: 85px;
+    left: 25px;
+    position: relative;
     border-radius: 20px;
     background-color: rgb(72, 61, 139, 0.5)
-
 }
 
 .infos {
@@ -120,7 +121,7 @@ input{
 }
 
 .btn{
-    height: 100px;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -147,4 +148,8 @@ input.white{
 
 body.white{
     background-color: #483d8b;
+}
+
+.infos-user.active{
+    height: 140px;
 }

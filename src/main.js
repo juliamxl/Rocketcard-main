@@ -1,5 +1,4 @@
 function gerarCard() {
-    const sCompany = '';
     const seguidores = document.querySelector(".followers");
     const seguindo = document.querySelector(".following");
     const repos = document.querySelector(".repository");
@@ -18,8 +17,11 @@ function gerarCard() {
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
                 location.textContent = data.location
-                company.textContent = CompanyLimit(data.company) 
-                
+                if(!data.company){
+                    company.textContent = data.company
+                } if(data.company.length >= 15){
+                    company.textContent = CompanyLimit(data.company)
+                }
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
             }
@@ -27,16 +29,10 @@ function gerarCard() {
 }
 
 function CompanyLimit(dataCompany){
-    var companyLenght = dataCompany.length;
-    if(companyLenght >= 15){
-        let resultado = dataCompany.substring(0,13);
-        console.log(resultado);
+        resultado = dataCompany.substring(0,13);
         return resultado + "...";
-    }else{
-        return dataCompany;
     }
-  
-}
+
 
 const card = document.querySelector(".card-user");
 const input = document.querySelector("input")
@@ -65,3 +61,11 @@ function gerarUrl() {
 
     return url + user;
 }
+
+
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.querySelector(".btn-card").click();
+  }
+});
