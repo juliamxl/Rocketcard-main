@@ -17,22 +17,25 @@ function gerarCard() {
                 repos.textContent = data.public_repos + " Repositórios"
                 imgUser.src = data.avatar_url
                 location.textContent = data.location
-                if(!data.company){
+                if (!data.company) {
                     company.textContent = data.company
-                    console.log("sda")
-                } if(data.company.length >= 15){
-                    company.textContent = CompanyLimit(data.company)
                 }
+                else if (data.company.length >= 15) {
+                    company.textContent = CompanyLimit(data.company)
+                }else{
+                    company.textContent = data.company
+                }
+
             } else {
                 window.alert("Este perfil não foi encontrado, digite um existente.")
             }
         })
 }
 
-function CompanyLimit(dataCompany){
-        resultado = dataCompany.substring(0,13);
-        return resultado + "...";
-    }
+function CompanyLimit(dataCompany) {
+    resultado = dataCompany.substring(0, 13);
+    return resultado + "...";
+}
 
 
 const card = document.querySelector(".card-user");
@@ -45,12 +48,12 @@ card.addEventListener("dblclick", function () {
     icon.classList.toggle('white')
     input.classList.toggle('white')
     body.classList.toggle('white')
-    
+
     var background = ['#E6E8E1', '#0e1218']
     card.style.background = background[i];
     input.style.background = background[i]
     i++;
-    if (i == 2){
+    if (i == 2) {
         i = 0
     }
 });
@@ -63,14 +66,10 @@ function gerarUrl() {
     return url + user;
 }
 
-input.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    document.querySelector(".btn-card").click();
-  }
+
+input.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        document.querySelector(".btn-card").click();
+    }
 });
-
-
-
-
-

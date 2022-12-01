@@ -85,9 +85,9 @@ body{
     height: 125px;
     padding: 10px;
     width: 150px;
-    bottom: 85px;
-    left: 25px;
     position: relative;
+    left: 30px;
+    bottom: 65px;
     border-radius: 20px;
     background-color: rgb(72, 61, 139, 0.5)
 }
